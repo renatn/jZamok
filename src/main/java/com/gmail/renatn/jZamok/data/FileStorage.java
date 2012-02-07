@@ -30,7 +30,7 @@ public class FileStorage {
 
         ZamokHandler handler = new ZamokHandler();
 
-        SAXParserFactory factory = SAXParserFactory.newInstance();
+        SAXParserFactory factory = SAXParserFactory.newInstance();    //http://www.vogella.de/articles/JavaXML/article.html
         factory.setValidating(false);     // We don't want validation
         factory.setNamespaceAware(false); // No namespaces please
         
