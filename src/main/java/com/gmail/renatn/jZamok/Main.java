@@ -15,11 +15,7 @@ import javax.swing.*;
 public class Main {
 
     private static MainFrame frame = null;
-
-    public static void showError(String msg) {
-        JOptionPane.showMessageDialog(frame, msg, "jZamok", JOptionPane.ERROR_MESSAGE);
-        System.err.println("Error: " + msg);
-    }
+    private static Logger logger = Logger.getLogger(Main.class.getName());
 
     public static void main(String args[]) {
 
@@ -47,13 +43,13 @@ public class Main {
                     frame.setVisible(true);
                     
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.log(Level.SEVERE, null, ex);
                 } catch (InstantiationException ex) {
-                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.log(Level.SEVERE, null, ex);
                 } catch (IllegalAccessException ex) {
-                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.log(Level.SEVERE, null, ex);
                 } catch (UnsupportedLookAndFeelException ex) {
-                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                    logger.log(Level.SEVERE, null, ex);
                 }
             }
         });

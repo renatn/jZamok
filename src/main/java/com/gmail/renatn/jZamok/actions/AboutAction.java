@@ -38,7 +38,7 @@ public class AboutAction extends AbstractAction {
             "<html><center><b><font color=red>j</font><font color=navy>Zamok</font></b>"
             +" "+MainFrame.appVersion+"<br>"
             +imgsrc
-            +"<br>(c) Nasyrov Renat, 2006 - 2008<br>e-Mail: renatn@gmail.com </center></html>",
+            +"<br>(c) Nasyrov Renat, 2006 - 2012<br>e-Mail: renatn@gmail.com </center></html>",
             "About", 
             JOptionPane.INFORMATION_MESSAGE
         );
