@@ -16,10 +16,6 @@ public class Main {
 
     private static MainFrame frame = null;
 
-    public static MainFrame getFrame() {
-        return frame;
-    }
-
     public static void showError(String msg) {
         JOptionPane.showMessageDialog(frame, msg, "jZamok", JOptionPane.ERROR_MESSAGE);
         System.err.println("Error: " + msg);

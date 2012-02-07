@@ -28,7 +28,7 @@ public final class UIHelper {
 
     static {
         try {
-            resources = ResourceBundle.getBundle("jZamok", Locale.getDefault());
+            resources = ResourceBundle.getBundle("i18n.jZamok", Locale.getDefault());
         } catch (MissingResourceException ex) {
             System.err.println(ex.getMessage());
             System.exit(1);
