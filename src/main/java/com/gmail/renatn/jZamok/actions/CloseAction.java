@@ -88,7 +88,7 @@ public class CloseAction extends AbstractAction {
 
         try {      
             storage.saveToFile(model, file);                            
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             app.showError("Can't save file: "+ex.getMessage());
         }                            
         
