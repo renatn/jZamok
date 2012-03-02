@@ -36,7 +36,7 @@ public class AboutAction extends AbstractAction {
         String imgsrc = String.format("<img src=\"%s\">", img.toString());
         JOptionPane.showMessageDialog(frame,
             "<html><center><b><font color=red>j</font><font color=navy>Zamok</font></b>"
-            +" "+MainFrame.appVersion+"<br>"
+            +" "+UIHelper.getString("app.version")+"<br>"
             +imgsrc
             +"<br>(c) Nasyrov Renat, 2006 - 2012<br>e-Mail: renatn@gmail.com </center></html>",
             "About", 

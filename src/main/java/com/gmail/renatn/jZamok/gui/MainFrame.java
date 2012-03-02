@@ -39,7 +39,6 @@ import java.util.List;
 public final class MainFrame extends JFrame {
 
     public final static String APP_NAME = "jZamok";
-    public final static String appVersion = "0.9.0";
 
     private Action openAction = new OpenAction(this);
     private Action saveAction = new SaveAction(this);

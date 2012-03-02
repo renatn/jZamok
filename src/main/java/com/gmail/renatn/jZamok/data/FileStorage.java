@@ -61,7 +61,7 @@ public class FileStorage {
     protected void save(ZamokDataModel dataModel, OutputStream out) throws Exception {
 
         XMLOutputFactory outputFactory = XMLOutputFactory.newInstance();
-        XMLEventWriter eventWriter = outputFactory.createXMLEventWriter(out);
+        XMLEventWriter eventWriter = outputFactory.createXMLEventWriter(out, "UTF-8");
         XMLEventFactory eventFactory = XMLEventFactory.newInstance();
         XMLEvent end = eventFactory.createDTD("\n");
         StartDocument startDocument = eventFactory.createStartDocument();
