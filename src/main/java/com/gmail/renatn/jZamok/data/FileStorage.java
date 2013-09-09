@@ -1,6 +1,5 @@
 package com.gmail.renatn.jZamok.data;
 
-import com.gmail.renatn.jZamok.AppProperties;
 import com.gmail.renatn.jZamok.model.PasswordEntry;
 import com.gmail.renatn.jZamok.model.PasswordGroup;
 import com.gmail.renatn.jZamok.model.ZamokDataModel;
@@ -102,7 +101,7 @@ public class FileStorage {
     private void printEntryXML(PasswordEntry psw, XMLEventWriter eventWriter, XMLEventFactory eventFactory) throws XMLStreamException {
         XMLEvent end = eventFactory.createDTD("\n");
 
-        StartElement entryElement = eventFactory.createStartElement("", "", AppProperties.XML_ENTRY_KEY);
+        StartElement entryElement = eventFactory.createStartElement("", "", ZamokHandler.XML_ENTRY_KEY);
         eventWriter.add(entryElement);
         eventWriter.add(end);
 
@@ -114,7 +113,7 @@ public class FileStorage {
         printElement("notes", psw.getNotes(), eventWriter, eventFactory);
         printElement("updated", Long.toString(psw.getLastUpdated().getTime()), eventWriter, eventFactory);
 
-        eventWriter.add(eventFactory.createEndElement("", "", AppProperties.XML_ENTRY_KEY));
+        eventWriter.add(eventFactory.createEndElement("", "", ZamokHandler.XML_ENTRY_KEY));
         eventWriter.add(end);
 
     }
@@ -122,7 +121,7 @@ public class FileStorage {
     public void printDataModel(PasswordGroup root, XMLEventWriter eventWriter, XMLEventFactory eventFactory) throws XMLStreamException {
 
         XMLEvent end = eventFactory.createDTD("\n");
-        StartElement rootStartElement = eventFactory.createStartElement("", "", AppProperties.XML_GROUP_KEY);
+        StartElement rootStartElement = eventFactory.createStartElement("", "", ZamokHandler.XML_GROUP_KEY);
         eventWriter.add(rootStartElement);
         eventWriter.add(eventFactory.createAttribute("name", root.getName()));
         eventWriter.add(end);
@@ -135,7 +134,7 @@ public class FileStorage {
             printDataModel(group, eventWriter, eventFactory);
         }
 
-        eventWriter.add(eventFactory.createEndElement("", "", AppProperties.XML_GROUP_KEY));
+        eventWriter.add(eventFactory.createEndElement("", "", ZamokHandler.XML_GROUP_KEY));
         eventWriter.add(end);
 
 

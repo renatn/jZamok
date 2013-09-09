@@ -6,19 +6,21 @@
  */
 package com.gmail.renatn.jZamok.data;
 
-import java.util.Date;
-
+import com.gmail.renatn.jZamok.model.PasswordEntry;
+import com.gmail.renatn.jZamok.model.PasswordGroup;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.gmail.renatn.jZamok.model.*;
-import com.gmail.renatn.jZamok.AppProperties;
+import java.util.Date;
 
 /**
  * @author renat
  */
 public class ZamokHandler extends DefaultHandler {
-    
+
+    public final static String XML_GROUP_KEY = "group";
+    public final static String XML_ENTRY_KEY = "entry";
+
     StringBuffer accumulator;
     PasswordGroup group, parent, root;
     PasswordEntry entry;  
@@ -38,7 +40,7 @@ public class ZamokHandler extends DefaultHandler {
 			      String qName, Attributes attributes) {
         accumulator.setLength(0);
         
-        if (qName.equals(AppProperties.XML_GROUP_KEY)) {
+        if (qName.equals(XML_GROUP_KEY)) {
             
             String groupName = attributes.getValue("name");            
             
@@ -50,7 +52,7 @@ public class ZamokHandler extends DefaultHandler {
             }
             parent = group;                  
             
-        } else if (qName.equals(AppProperties.XML_ENTRY_KEY)) {
+        } else if (qName.equals(XML_ENTRY_KEY)) {
             
             entry = new PasswordEntry();
             
@@ -75,11 +77,11 @@ public class ZamokHandler extends DefaultHandler {
         } else if (qName.equals("updated")) {
             Date date = new Date(Long.parseLong(accumulator.toString()));
             entry.setLastUpdated(date);
-        } else if (qName.equals(AppProperties.XML_ENTRY_KEY)) {
+        } else if (qName.equals(XML_ENTRY_KEY)) {
           
             group.addEntry(entry);
         
-        } else if (qName.equals(AppProperties.XML_GROUP_KEY)) {
+        } else if (qName.equals(XML_GROUP_KEY)) {
 
             parent = parent.getParent(); 
             

@@ -25,9 +25,6 @@ public final class AppProperties {
     public final static String CONF_MAIN_DIV_ID = "Application.MainDivider";
     public final static String CONF_CENTR_DIV_ID = "Application.CenterDivider";    
 
-    public final static String XML_GROUP_KEY = "group";    
-    public final static String XML_ENTRY_KEY = "entry";    
-    
     public final static Dimension DEF_BTN_SIZE = new Dimension(96, 24);    
 
     public final static String profilePath = System.getProperty("user.home")
