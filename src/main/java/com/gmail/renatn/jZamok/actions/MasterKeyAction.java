@@ -11,13 +11,15 @@ package com.gmail.renatn.jZamok.actions;
  *
  * @author renat
  */
-import java.awt.event.*;
-import javax.swing.*;
 
-import com.gmail.renatn.jZamok.gui.UIHelper;
 import com.gmail.renatn.jZamok.gui.MainFrame;
-import com.gmail.renatn.jZamok.gui.ZamokView;
+import com.gmail.renatn.jZamok.gui.MasterKeyDialog;
+import com.gmail.renatn.jZamok.gui.UIHelper;
 import com.gmail.renatn.jZamok.model.ZamokDocument;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.util.Arrays;
 
 public class MasterKeyAction extends AbstractAction {
 
@@ -38,17 +40,40 @@ public class MasterKeyAction extends AbstractAction {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        String result = JOptionPane.showInputDialog(app, "Enter secret phrase", "");
-        if (result != null && !"".equals(result)) {
-            ZamokView view = app.getTab();
-            if (view == null) {
-                throw new IllegalStateException("Document is empty");
+        MasterKeyDialog dlg = new MasterKeyDialog(app);
+
+        if (dlg.showDialog()) {
+
+            String msg = validatePassword(dlg.getCurrentPassword(), dlg.getNewPassword(), dlg.getConfirmPassword());
+            if (msg != null) {
+                app.showError(msg);
+                return;
             }
-            ZamokDocument model = view.getModel();
-            model.setPhrase(result.toCharArray());
+
+            ZamokDocument model = app.getModel();
+            model.setPhrase(dlg.getNewPassword());
             model.setChanged(true);
+            app.updateTab();
+
         }
-        
+
+    }
+
+    private String validatePassword(char[] currentPassword, char[] newPassword, char[] confirmPassword) {
+        char[] currentMasterKey = app.getModel().getPhrase();
+        if (!Arrays.equals(currentPassword, currentMasterKey)) {
+            return "Wrong current master key";
+        }
+
+        if (newPassword == null || newPassword.length == 0) {
+            return "Master key cannot be empty";
+        }
+
+        if (!Arrays.equals(newPassword, confirmPassword)) {
+            return "Passswords doesn't match";
+        }
+
+        return null;
     }
     
 }
