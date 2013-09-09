@@ -36,7 +36,7 @@ public class AddGroupAction extends AbstractAction {
     public void actionPerformed(ActionEvent e) {
         
         ZamokView view = app.getTab();
-        ZamokDataModel model = view.getModel();
+        ZamokDocument model = view.getModel();
         PasswordGroup group = view.getSelectedGroup();           
         
         String result = JOptionPane.showInputDialog(app, "Enter Folder name", "");

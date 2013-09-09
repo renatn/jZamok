@@ -2,7 +2,7 @@ package com.gmail.renatn.jZamok.data;
 
 import com.gmail.renatn.jZamok.model.PasswordEntry;
 import com.gmail.renatn.jZamok.model.PasswordGroup;
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
+import com.gmail.renatn.jZamok.model.ZamokDocument;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -57,7 +57,7 @@ public class FileStorage {
         load(new FileInputStream(file));
     }
 
-    protected void save(ZamokDataModel dataModel, OutputStream out) throws Exception {
+    protected void save(ZamokDocument dataModel, OutputStream out) throws Exception {
 
         XMLOutputFactory outputFactory = XMLOutputFactory.newInstance();
         XMLEventWriter eventWriter = outputFactory.createXMLEventWriter(out, "UTF-8");
@@ -75,7 +75,7 @@ public class FileStorage {
 
     }
 
-    public void saveToFile(ZamokDataModel model, File file) throws Exception {
+    public void saveToFile(ZamokDocument model, File file) throws Exception {
         save(model, new FileOutputStream(file));
     }
 

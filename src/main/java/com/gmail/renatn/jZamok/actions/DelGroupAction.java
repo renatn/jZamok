@@ -14,7 +14,7 @@ import com.gmail.renatn.jZamok.gui.UIHelper;
 import com.gmail.renatn.jZamok.gui.MainFrame;
 import com.gmail.renatn.jZamok.gui.ZamokView;
 import com.gmail.renatn.jZamok.model.PasswordGroup;
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
+import com.gmail.renatn.jZamok.model.ZamokDocument;
 
 /**
  *
@@ -35,7 +35,7 @@ public class DelGroupAction extends AbstractAction {
     public void actionPerformed(ActionEvent e) {
 
         ZamokView view = app.getTab();
-        ZamokDataModel model = view.getModel();
+        ZamokDocument model = view.getModel();
         PasswordGroup group = view.getSelectedGroup();
 
         if (model.isRoot(group)) {

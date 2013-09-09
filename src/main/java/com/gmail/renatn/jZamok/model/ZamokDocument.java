@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author renat
  */
-public class ZamokDataModel {
+public class ZamokDocument {
 
     private final static char[] DEFPASSWORD = {'s', 'i', 'm', 's', 'i', 'm'};
     
@@ -29,7 +29,7 @@ public class ZamokDataModel {
 
     private List<ZamokListener> listeners = new ArrayList<ZamokListener>();
         
-    public ZamokDataModel(PasswordGroup root) {       
+    public ZamokDocument(PasswordGroup root) {
         this.root = root;
                 
         phrase = DEFPASSWORD;        
@@ -38,7 +38,7 @@ public class ZamokDataModel {
 
     }
 
-    public ZamokDataModel() {               
+    public ZamokDocument() {
         this(new PasswordGroup("passwords"));
     }
            

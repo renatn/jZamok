@@ -14,8 +14,6 @@ import com.gmail.renatn.jZamok.gui.UIHelper;
 import com.gmail.renatn.jZamok.gui.MainFrame;
 import com.gmail.renatn.jZamok.gui.ZamokView;
 import com.gmail.renatn.jZamok.model.*;
-import com.gmail.renatn.jZamok.gui.ZamokView;
-import com.gmail.renatn.jZamok.model.*;
 
 /**
  *
@@ -41,7 +39,7 @@ public class RenameGroupAction extends AbstractAction {
         if ( (result != null) && (!"".equals(result)) ) {
 
             ZamokView view = app.getTab();
-            ZamokDataModel model = view.getModel();
+            ZamokDocument model = view.getModel();
             PasswordGroup group = view.getSelectedGroup();            
             model.renameGroup(result, group);
 

@@ -44,7 +44,7 @@ public class DelEntryAction extends AbstractAction {
 
         if(result == JOptionPane.YES_OPTION) {
             ZamokView view = app.getTab();
-            ZamokDataModel model = view.getModel();
+            ZamokDocument model = view.getModel();
             PasswordGroup group = view.getSelectedGroup();
             PasswordEntry entry = view.getSelectedEntry();
             model.delEntry(entry, group);

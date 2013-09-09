@@ -19,7 +19,7 @@ import com.gmail.renatn.jZamok.EntryTransferable;
 import com.gmail.renatn.jZamok.gui.MainFrame;
 import com.gmail.renatn.jZamok.gui.ZamokView;
 import com.gmail.renatn.jZamok.model.PasswordGroup;
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
+import com.gmail.renatn.jZamok.model.ZamokDocument;
 
 /**
  *
@@ -59,7 +59,7 @@ public class EntryPasteAction extends AbstractAction {
                 return;
             }
             
-            ZamokDataModel model = view.getModel();
+            ZamokDocument model = view.getModel();
             PasswordGroup group = view.getSelectedGroup();
             if (group != null) {                
                 model.addEntry(copyEntry, group);

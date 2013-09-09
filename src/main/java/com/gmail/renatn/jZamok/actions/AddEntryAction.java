@@ -16,7 +16,7 @@ import com.gmail.renatn.jZamok.gui.PasswordEntryDialog;
 import com.gmail.renatn.jZamok.gui.ZamokView;
 import com.gmail.renatn.jZamok.model.PasswordEntry;
 import com.gmail.renatn.jZamok.model.PasswordGroup;
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
+import com.gmail.renatn.jZamok.model.ZamokDocument;
 
 /**
  *
@@ -50,7 +50,7 @@ public class AddEntryAction extends AbstractAction {
         boolean res = dlg.showDialog();
         if (res) {
             ZamokView view = app.getTab();
-            ZamokDataModel model = view.getModel();
+            ZamokDocument model = view.getModel();
             PasswordGroup group = view.getSelectedGroup();
             model.addEntry(entry, group);
         }

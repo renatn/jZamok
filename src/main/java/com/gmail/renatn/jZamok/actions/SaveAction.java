@@ -14,7 +14,7 @@ import java.io.File;
 import com.gmail.renatn.jZamok.gui.MainFrame;
 import com.gmail.renatn.jZamok.gui.UIHelper;
 import com.gmail.renatn.jZamok.gui.ZamokView;
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
+import com.gmail.renatn.jZamok.model.ZamokDocument;
 import com.gmail.renatn.jZamok.workers.SaveWorker;
 
 /**
@@ -46,7 +46,7 @@ public class SaveAction extends AbstractAction {
             throw new IllegalStateException();
         }
         
-        ZamokDataModel model = view.getModel();
+        ZamokDocument model = view.getModel();
         File file = model.getFile();
         
         if (!file.exists()) {

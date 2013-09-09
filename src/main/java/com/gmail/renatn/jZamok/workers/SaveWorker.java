@@ -13,7 +13,7 @@ import javax.swing.SwingWorker;
 import com.gmail.renatn.jZamok.gui.MainFrame;
 import com.gmail.renatn.jZamok.gui.UIHelper;
 
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
+import com.gmail.renatn.jZamok.model.ZamokDocument;
 import com.gmail.renatn.jZamok.data.EncFileStorage;
 import com.gmail.renatn.jZamok.data.FileStorage;
 
@@ -35,7 +35,7 @@ public class SaveWorker extends SwingWorker {
     protected Object doInBackground() throws Exception {
         
         FileStorage storage;
-        ZamokDataModel model = app.getModel();
+        ZamokDocument model = app.getModel();
                        
         if (UIHelper.isExtXML(file)) {
             storage = new FileStorage();                
@@ -53,7 +53,7 @@ public class SaveWorker extends SwingWorker {
         
         try {
             
-            ZamokDataModel model = (ZamokDataModel) get();                       
+            ZamokDocument model = (ZamokDocument) get();
             model.setChanged(false);
             model.setFile(file);
 

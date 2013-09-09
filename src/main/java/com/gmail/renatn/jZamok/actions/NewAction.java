@@ -12,7 +12,7 @@ import javax.swing.*;
 
 import com.gmail.renatn.jZamok.gui.UIHelper;
 import com.gmail.renatn.jZamok.gui.MainFrame;
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
+import com.gmail.renatn.jZamok.model.ZamokDocument;
 
 /**
  *
@@ -33,7 +33,7 @@ public class NewAction extends AbstractAction {
     }
    
     public void actionPerformed(ActionEvent e) {
-        app.openDocument(new ZamokDataModel());
+        app.openDocument(new ZamokDocument());
     }              
     
 }

@@ -12,9 +12,9 @@ import javax.swing.event.TreeModelListener;
  */
 public class ZamokTreeModel implements TreeModel {
 
-    private ZamokDataModel dataModel;
+    private ZamokDocument dataModel;
 
-    public ZamokTreeModel(ZamokDataModel model) {
+    public ZamokTreeModel(ZamokDocument model) {
         this.dataModel = model;               
     }
 

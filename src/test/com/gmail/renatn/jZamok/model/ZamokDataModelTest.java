@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  */
 public class ZamokDataModelTest {
     
-    private ZamokDataModel model;
+    private ZamokDocument model;
 
     @BeforeClass
     public static void setUpClass() throws Exception {
@@ -25,7 +25,7 @@ public class ZamokDataModelTest {
 
     @Before
     public void setUp() {
-        model = new ZamokDataModel();
+        model = new ZamokDocument();
         File file = new File("test.zmk");
         model.setFile(file);
     }
@@ -86,7 +86,7 @@ public class ZamokDataModelTest {
     @Test
     public void delGroup() {
         PasswordGroup group = null;
-        ZamokDataModel instance = new ZamokDataModel();
+        ZamokDocument instance = new ZamokDocument();
         instance.delGroup(group);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

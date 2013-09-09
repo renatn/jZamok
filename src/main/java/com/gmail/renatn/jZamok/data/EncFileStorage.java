@@ -7,7 +7,7 @@
 
 package com.gmail.renatn.jZamok.data;
 
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
+import com.gmail.renatn.jZamok.model.ZamokDocument;
 import com.sun.crypto.provider.SunJCE;
 
 import javax.crypto.*;
@@ -67,7 +67,7 @@ public class EncFileStorage extends FileStorage {
     }
 
     @Override
-    public void saveToFile(ZamokDataModel model, File file) throws Exception {
+    public void saveToFile(ZamokDocument model, File file) throws Exception {
 
         FileOutputStream fout = new FileOutputStream(file);
         SecretKey key = generateKey(phrase);

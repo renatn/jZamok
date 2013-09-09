@@ -17,9 +17,7 @@ import javax.swing.*;
 import com.gmail.renatn.jZamok.gui.UIHelper;
 import com.gmail.renatn.jZamok.gui.MainFrame;
 import com.gmail.renatn.jZamok.gui.ZamokView;
-import com.gmail.renatn.jZamok.gui.ZamokView;
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
+import com.gmail.renatn.jZamok.model.ZamokDocument;
 
 public class MasterKeyAction extends AbstractAction {
 
@@ -46,7 +44,7 @@ public class MasterKeyAction extends AbstractAction {
             if (view == null) {
                 throw new IllegalStateException("Document is empty");
             }
-            ZamokDataModel model = view.getModel();
+            ZamokDocument model = view.getModel();
             model.setPhrase(result.toCharArray());
             model.setChanged(true);
         }

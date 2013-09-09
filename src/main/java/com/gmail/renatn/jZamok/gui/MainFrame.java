@@ -19,7 +19,7 @@ import com.gmail.renatn.jZamok.AppProperties;
 import com.gmail.renatn.jZamok.actions.*;
 import com.gmail.renatn.jZamok.model.PasswordEntry;
 import com.gmail.renatn.jZamok.model.PasswordGroup;
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
+import com.gmail.renatn.jZamok.model.ZamokDocument;
 import com.gmail.renatn.jZamok.model.ZamokListener;
 import com.gmail.renatn.jZamok.workers.LoadWorker;
 
@@ -390,7 +390,7 @@ public final class MainFrame extends JFrame {
 
     }
 
-    public void openDocument(ZamokDataModel model) {
+    public void openDocument(ZamokDocument model) {
 
         model.addZamokListener(new ZamokListener() {
             public void groupChanged(PasswordGroup group) {
@@ -457,7 +457,7 @@ public final class MainFrame extends JFrame {
             statusBar.setCurrent(0);
             return;
         }
-        ZamokDataModel model = view.getModel();
+        ZamokDocument model = view.getModel();
         File file = model.getFile();
 
         String title = String.format("%s - %s", APP_NAME, file.getName());
@@ -494,7 +494,7 @@ public final class MainFrame extends JFrame {
     }
 
 
-    public ZamokDataModel getModel() {
+    public ZamokDocument getModel() {
         ZamokView view = getTab();
         if (view == null)
             throw new IllegalArgumentException("Model is null");

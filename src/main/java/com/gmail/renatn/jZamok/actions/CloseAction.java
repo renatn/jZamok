@@ -5,13 +5,11 @@ import com.gmail.renatn.jZamok.gui.MainFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
-import java.io.IOException;
 import javax.swing.*;
 
-import com.gmail.renatn.jZamok.*;
 import com.gmail.renatn.jZamok.data.*;
 import com.gmail.renatn.jZamok.gui.ZamokView;
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
+import com.gmail.renatn.jZamok.model.ZamokDocument;
 
 /**
  *
@@ -41,7 +39,7 @@ public class CloseAction extends AbstractAction {
             throw new IllegalStateException("No opened docs");
         }
         
-        ZamokDataModel model = view.getModel();
+        ZamokDocument model = view.getModel();
         if (model.isChanged()) {
 
             int result = JOptionPane.showConfirmDialog(app,
@@ -76,7 +74,7 @@ public class CloseAction extends AbstractAction {
         
     }
     
-    private void save(ZamokDataModel model, File file) {
+    private void save(ZamokDocument model, File file) {
 
         FileStorage storage;
 

@@ -13,7 +13,7 @@ import javax.swing.SwingWorker;
 import com.gmail.renatn.jZamok.gui.MainFrame;
 import com.gmail.renatn.jZamok.gui.UIHelper;
 
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
+import com.gmail.renatn.jZamok.model.ZamokDocument;
 import com.gmail.renatn.jZamok.data.EncFileStorage;
 import com.gmail.renatn.jZamok.data.FileStorage;
 import com.gmail.renatn.jZamok.gui.InputPasswordDialog;
@@ -70,7 +70,7 @@ public class LoadWorker extends SwingWorker {
             if (root == null)
                 return;
     
-            ZamokDataModel model = new ZamokDataModel(root);
+            ZamokDocument model = new ZamokDocument(root);
             model.setFile(file);
             if (isCrypted) {
                 char[] phrase = ((EncFileStorage) store).getPhrase();

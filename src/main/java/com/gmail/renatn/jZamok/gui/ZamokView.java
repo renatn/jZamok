@@ -3,7 +3,7 @@ package com.gmail.renatn.jZamok.gui;
 import com.gmail.renatn.jZamok.AppProperties;
 import com.gmail.renatn.jZamok.model.PasswordEntry;
 import com.gmail.renatn.jZamok.model.PasswordGroup;
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
+import com.gmail.renatn.jZamok.model.ZamokDocument;
 import com.gmail.renatn.jZamok.model.ZamokListener;
 
 import java.awt.*;
@@ -28,12 +28,12 @@ public class ZamokView extends JPanel implements ZamokListener {
 
     private GroupView groupView;
        
-    private ZamokDataModel dataModel;  
+    private ZamokDocument dataModel;
     private ZamokSelection selection; 
     
     private Action editAction;
 
-    public ZamokView(ZamokDataModel model) {        
+    public ZamokView(ZamokDocument model) {
 
         if (model == null) {
             throw new IllegalArgumentException("dataModel must be non null");
@@ -81,7 +81,7 @@ public class ZamokView extends JPanel implements ZamokListener {
         groupView.updateUI();
     }    
 
-    public ZamokDataModel getModel() {
+    public ZamokDocument getModel() {
         return dataModel;
     }
     

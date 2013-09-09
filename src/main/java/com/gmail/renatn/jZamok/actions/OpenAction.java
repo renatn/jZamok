@@ -15,7 +15,7 @@ import com.gmail.renatn.jZamok.data.*;
 import com.gmail.renatn.jZamok.gui.MainFrame;
 import com.gmail.renatn.jZamok.gui.UIHelper;
 import com.gmail.renatn.jZamok.gui.ZamokView;
-import com.gmail.renatn.jZamok.model.ZamokDataModel;
+import com.gmail.renatn.jZamok.model.ZamokDocument;
 import com.gmail.renatn.jZamok.workers.LoadWorker;
 
 /**
@@ -44,7 +44,7 @@ public class OpenAction extends AbstractAction {
         
         ZamokView view = app.getTab();
         if (view != null) {
-            ZamokDataModel model = view.getModel();
+            ZamokDocument model = view.getModel();
             String path = model.getFile().getAbsolutePath();
             chooser = new JFileChooser(path); 
         } else {
