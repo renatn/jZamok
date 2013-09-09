@@ -1,17 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.gmail.renatn.jZamok.model;
+
+import org.junit.*;
 
 import java.io.File;
 import java.util.Arrays;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -20,10 +13,7 @@ import static org.junit.Assert.*;
  */
 public class ZamokDataModelTest {
     
-    ZamokDataModel model;
-
-    public ZamokDataModelTest() {
-    }
+    private ZamokDataModel model;
 
     @BeforeClass
     public static void setUpClass() throws Exception {
@@ -35,7 +25,6 @@ public class ZamokDataModelTest {
 
     @Before
     public void setUp() {
-        PasswordGroup root = new PasswordGroup("Root");
         model = new ZamokDataModel();
         File file = new File("test.zmk");
         model.setFile(file);
@@ -46,24 +35,10 @@ public class ZamokDataModelTest {
     }
 
     /**
-     * Test of addZamokListener method, of class ZamokDataModel.
-     */
-    @Test
-    public void addZamokListener() {
-        System.out.println("addZamokListener");
-        ZamokListener listener = null;
-        ZamokDataModel instance = new ZamokDataModel();
-        instance.addZamokListener(listener);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
      * Test of addEntry method, of class ZamokDataModel.
      */
     @Test
     public void addEntry() {
-        System.out.println("addEntry");
         PasswordEntry entry = new PasswordEntry();
         PasswordGroup group = model.getRoot();
         model.addEntry(entry, group);
@@ -77,7 +52,6 @@ public class ZamokDataModelTest {
      */
     @Test
     public void delEntry() {
-        System.out.println("delEntry");
         PasswordEntry entry = new PasswordEntry();
         PasswordGroup group = model.getRoot();
         model.addEntry(entry, group);
@@ -91,7 +65,6 @@ public class ZamokDataModelTest {
      */
     @Test
     public void addGroup() {
-        System.out.println("addGroup");
         model.addGroup("doom", model.getRoot());
         PasswordGroup result = model.getRoot().getListGroup().get(0);
         assertEquals("doom", result.getName());        
@@ -102,7 +75,6 @@ public class ZamokDataModelTest {
      */
     @Test
     public void renameGroup() {
-        System.out.println("renameGroup");
         PasswordGroup group = model.getRoot();
         model.renameGroup("Not Root", group);
         assertEquals("Not Root", model.getRoot().getName());
@@ -113,7 +85,6 @@ public class ZamokDataModelTest {
      */
     @Test
     public void delGroup() {
-        System.out.println("delGroup");
         PasswordGroup group = null;
         ZamokDataModel instance = new ZamokDataModel();
         instance.delGroup(group);

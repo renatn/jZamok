@@ -63,6 +63,7 @@ public class ZamokDataModel {
         fireGroupChanged(parentGroup);       
     }
 
+    // TODO: remove
     public void renameGroup(String name, PasswordGroup group) {
         group.setName(name);
         fireGroupChanged(group);

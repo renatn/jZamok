@@ -1,18 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.gmail.renatn.jZamok.gui;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
-
 import com.gmail.renatn.jZamok.model.PasswordGroup;
+import org.junit.*;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  *
