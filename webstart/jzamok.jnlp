@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <jnlp 
     spec="1.0+" 
-    codebase="http://146.185.168.53"
+    codebase="https://github.com/renatn/jZamok/raw/master/webstart"
     href="jzamok.jnlp">
   <information>
     <title>jZamok</title>    
